@@ -1,0 +1,21 @@
+# revo.tthtesting.co.uk
+
+ProxyRequests Off
+
+<VirtualHost *:80>
+  ServerName revo.tthtesting.co.uk
+
+  DocumentRoot /home/smoo/revo.tthtesting.co.uk/www
+  CustomLog /home/smoo/revo.tthtesting.co.uk/logs/apache.access_log combined
+  ErrorLog /home/smoo/revo.tthtesting.co.uk/logs/apache.error_log
+
+  <Directory "/home/smoo/revo.tthtesting.co.uk/www">
+    AllowOverride All
+    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+
+</VirtualHost>
